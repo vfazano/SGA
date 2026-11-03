@@ -1,0 +1,57 @@
+version: '3.8'
+
+services:
+  # Banco de Dados Relacional Local (PostgreSQL)
+  postgres:
+    image: postgres:15-alpine
+    container_name: sga-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: sga_user
+      POSTGRES_PASSWORD: sga_secure_password
+      POSTGRES_DB: sga_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./infra/init-db.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U sga_user -d sga_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Backend API (Node.js / Express)
+  backend:
+    build:
+      context: .
+      dockerfile: infra/Dockerfile.backend
+    container_name: sga-backend
+    restart: unless-stopped
+    ports:
+      - "3001:3001"
+    environment:
+      PORT: 3001
+      NODE_ENV: production
+      DATABASE_URL: postgres://sga_user:sga_secure_password@postgres:5432/sga_db
+      # Se for conectar ao Supabase em nuvem, descomente e preencha:
+      # SUPABASE_URL: https://seu-projeto.supabase.co
+      # SUPABASE_SERVICE_ROLE_KEY: sua-chave-aqui
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  # Frontend Web (React SPA)
+  frontend:
+    build:
+      context: .
+      dockerfile: infra/Dockerfile.frontend
+    container_name: sga-frontend
+    restart: unless-stopped
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+
+volumes:
+  postgres_data:

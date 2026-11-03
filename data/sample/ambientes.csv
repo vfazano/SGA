@@ -1,0 +1,6 @@
+id,codigo,nome,tipo,local,capacidade,status
+1,SL-101,Sala de Aula 101,Sala Teórica,Bloco A - 1º Andar,40,Disponível
+2,LAB-201,Laboratório de Informática I,Laboratório,Bloco B - 2º Andar,30,Disponível
+3,LAB-202,Laboratório de Redes e Hardware,Laboratório,Bloco B - 2º Andar,28,Em Manutenção
+4,AUD-01,Auditório Principal,Auditório,Bloco Central - Térreo,120,Disponível
+5,SL-102,Sala de Aula 102,Sala Teórica,Bloco A - 1º Andar,35,Ocupada

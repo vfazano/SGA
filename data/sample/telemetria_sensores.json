@@ -1,0 +1,47 @@
+[
+  {
+    "sensor_id": "SN-PIR-LAB201",
+    "ambiente_codigo": "LAB-201",
+    "tipo_sensor": "Presença (PIR)",
+    "timestamp": "2026-03-10T19:30:00Z",
+    "valor": 1,
+    "unidade": "booleano",
+    "status_operacional": "OK"
+  },
+  {
+    "sensor_id": "SN-TMP-LAB201",
+    "ambiente_codigo": "LAB-201",
+    "tipo_sensor": "Temperatura Ambiente (DHT22)",
+    "timestamp": "2026-03-10T19:30:00Z",
+    "valor": 23.4,
+    "unidade": "°C",
+    "status_operacional": "OK"
+  },
+  {
+    "sensor_id": "SN-PWR-LAB201",
+    "ambiente_codigo": "LAB-201",
+    "tipo_sensor": "Consumo de Energia (SCT-013)",
+    "timestamp": "2026-03-10T19:30:00Z",
+    "valor": 1850,
+    "unidade": "Watts",
+    "status_operacional": "OK"
+  },
+  {
+    "sensor_id": "SN-PIR-SL101",
+    "ambiente_codigo": "SL-101",
+    "tipo_sensor": "Presença (PIR)",
+    "timestamp": "2026-03-10T19:30:00Z",
+    "valor": 1,
+    "unidade": "booleano",
+    "status_operacional": "OK"
+  },
+  {
+    "sensor_id": "SN-TMP-SL101",
+    "ambiente_codigo": "SL-101",
+    "tipo_sensor": "Temperatura Ambiente (DHT22)",
+    "timestamp": "2026-03-10T19:30:00Z",
+    "valor": 26.8,
+    "unidade": "°C",
+    "status_operacional": "ALERTA_TEMPERATURA_ELEVADA"
+  }
+]

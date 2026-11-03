@@ -1,0 +1,95 @@
+name: SGA DevOps CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, develop, develop-2 ]
+  pull_request:
+    branches: [ main, develop, develop-2 ]
+
+jobs:
+  data-and-unit-tests:
+    name: 🧪 Validação de Dados e Testes Unitários
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do Repositório
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js (v20)
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+          cache-dependency-path: package.json
+
+      - name: Instalar Dependências Raiz
+        run: npm install --no-audit
+
+      - name: Validar Conjuntos de Dados Sintéticos e Integridade
+        run: npm run validate-data
+
+      - name: Executar Suíte de Testes Automatizados (Dados, Indicadores e Regras)
+        run: npm test
+
+  security-and-secrets:
+    name: 🔒 Verificação de Segurança e Detecção de Segredos
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do Repositório
+        uses: actions/checkout@v4
+
+      - name: Verificar se há arquivos .env comutados indevidamente
+        run: |
+          if git ls-files | grep -E "(^|/)\.env$"; then
+            echo "❌ ERRO DE SEGURANÇA: Arquivo .env com credenciais detectado no repositório!"
+            exit 1
+          else
+            echo "✅ Nenhum arquivo .env sensível versionado."
+          fi
+
+  frontend-build:
+    name: 🏗️ Validação e Build do Front-End React
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do Repositório
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Instalar Dependências do Frontend
+        working-directory: APP/font_end
+        run: npm ci --legacy-peer-deps || npm install --legacy-peer-deps
+
+      - name: Executar Testes do Front-End
+        working-directory: APP/font_end
+        run: npm test -- --watchAll=false --passWithNoTests
+        env:
+          CI: true
+
+      - name: Build de Produção do Front-End
+        working-directory: APP/font_end
+        run: npm run build
+        env:
+          CI: false
+
+  backend-check:
+    name: 🚀 Validação da Sintaxe e Dependências do Backend
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do Repositório
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Instalar Dependências do Backend
+        working-directory: APP/beck_end
+        run: npm ci || npm install
+
+      - name: Verificar Sintaxe do Servidor Express
+        working-directory: APP/beck_end
+        run: node -c server.js && node -c src/app.js

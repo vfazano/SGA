@@ -1,0 +1,4 @@
+id,codigo,nome,curso,turno,carga_horaria,situacao,horario_inicio,horario_fim,periodo_inicio,periodo_fim
+1,ADS-2026-1N,ADS 1º Noturno,Análise e Desenvolvimento de Sistemas,Noturno,400,Ativa,19:00:00,22:30:00,2026-02-01,2026-06-30
+2,GTI-2026-3N,GTI 3º Noturno,Gestão da TI,Noturno,360,Ativa,19:00:00,22:30:00,2026-02-01,2026-06-30
+3,RDS-2026-2M,Redes 2º Matutino,Redes de Computadores,Matutino,380,Ativa,08:00:00,11:30:00,2026-02-01,2026-06-30

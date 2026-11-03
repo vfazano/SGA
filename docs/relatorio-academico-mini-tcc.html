@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>SGA - Relatório Acadêmico Mini TCC (Frameworks Front-End)</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 30mm 20mm 20mm 30mm;
+      @bottom-right {
+        content: counter(page);
+      }
+    }
+    body {
+      font-family: "Times New Roman", Times, serif;
+      font-size: 12pt;
+      line-height: 1.5;
+      text-align: justify;
+      color: #000000;
+      background: #ffffff;
+      margin: 0;
+      padding: 0;
+    }
+    .capa {
+      text-align: center;
+      height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      page-break-after: always;
+    }
+    .capa h1 {
+      font-size: 14pt;
+      text-transform: uppercase;
+      font-weight: bold;
+      margin: 0;
+    }
+    .capa h2 {
+      font-size: 16pt;
+      text-transform: uppercase;
+      font-weight: bold;
+      margin: 40px 0 20px 0;
+    }
+    .capa h3 {
+      font-size: 12pt;
+      font-weight: normal;
+      margin: 0;
+    }
+    .folha-rosto {
+      text-align: center;
+      height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      page-break-after: always;
+    }
+    .natureza-trabalho {
+      margin-left: 50%;
+      text-align: justify;
+      font-size: 10pt;
+      line-height: 1.2;
+    }
+    h1.secao {
+      font-size: 12pt;
+      text-transform: uppercase;
+      font-weight: bold;
+      margin-top: 24pt;
+      margin-bottom: 12pt;
+      page-break-before: always;
+    }
+    h2.subsecao {
+      font-size: 12pt;
+      font-weight: bold;
+      margin-top: 18pt;
+      margin-bottom: 8pt;
+    }
+    h3.subsubsecao {
+      font-size: 12pt;
+      font-style: italic;
+      margin-top: 12pt;
+      margin-bottom: 6pt;
+    }
+    p {
+      text-indent: 1.5cm;
+      margin-bottom: 0;
+      margin-top: 0;
+    }
+    .citacao-longa {
+      margin-left: 4cm;
+      font-size: 10pt;
+      line-height: 1.1;
+      margin-top: 10pt;
+      margin-bottom: 10pt;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14pt 0;
+      font-size: 10pt;
+    }
+    th, td {
+      border: 1px solid #000;
+      padding: 6pt 8pt;
+    }
+    th {
+      background: #f0f0f0;
+      font-weight: bold;
+    }
+    .page-break {
+      page-break-after: always;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="capa">
+    <div>
+      <h1>INSTITUIÇÃO DE ENSINO SUPERIOR</h1>
+      <h3>CURSO SUPERIOR DE TECNOLOGIA EM ANÁLISE E DESENVOLVIMENTO DE SISTEMAS</h3>
+      <br><br>
+      <p style="text-indent:0; text-align:center; font-weight:bold;">
+        BIANCA CIRILO &bull; EDILAINE PAULINO &bull; FABIO BITENCOURT<br>
+        GUILHERME LEITE &bull; RONALDO SOARES &bull; VITOR FAZANO
+      </p>
+    </div>
+
+    <div>
+      <h2>SGA — SISTEMA DE GESTÃO DE AMBIENTES</h2>
+      <h3>DESENVOLVIMENTO DE UMA APLICAÇÃO WEB REATIVA COM REACT.JS, ARQUITETURA SPA E SUPABASE</h3>
+    </div>
+
+    <div>
+      <p style="text-indent:0; text-align:center;">SÃO PAULO — SP<br>2026</p>
+    </div>
+  </div>
+
+  <div class="folha-rosto">
+    <div>
+      <p style="text-indent:0; text-align:center; font-weight:bold;">
+        BIANCA CIRILO &bull; EDILAINE PAULINO &bull; FABIO BITENCOURT<br>
+        GUILHERME LEITE &bull; RONALDO SOARES &bull; VITOR FAZANO
+      </p>
+      <br><br>
+      <h2>SGA — SISTEMA DE GESTÃO DE AMBIENTES</h2>
+    </div>
+
+    <div class="natureza-trabalho">
+      Trabalho de Conclusão de Disciplina (Mini TCC) apresentado ao Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas da Instituição, como requisito parcial para aprovação na disciplina de <strong>Frameworks Front-End</strong> e <strong>Projeto Integrador II</strong>.<br><br>
+      <strong>Equipe:</strong> TechFlow<br>
+      <strong>Orientador:</strong> Professor Responsável
+    </div>
+
+    <div>
+      <p style="text-indent:0; text-align:center;">SÃO PAULO — SP<br>2026</p>
+    </div>
+  </div>
+
+  <h1 class="secao" style="page-break-before:avoid;">RESUMO</h1>
+  <p>O presente trabalho acadêmico documenta o planejamento, a modelagem, a implementação e a validação do <strong>SGA — Sistema de Gestão de Ambientes</strong>, uma aplicação web reativa desenvolvida para solucionar os problemas de fragmentação de informações na administração de espaços físicos em instituições de ensino. O cenário pré-existente caracterizava-se pelo uso de planilhas eletrônicas e controles manuais desarticulados, culminando em conflitos de horários em salas de aula, subutilização de laboratórios e lentidão no atendimento a chamados de manutenção predial. Para sanar tais vulnerabilidades, desenvolveu-se uma aplicação baseada na biblioteca <strong>React.js</strong>, estruturada segundo o paradigma de <em>Single Page Application</em> (SPA), com divisão modular de componentes, gerenciamento centralizado de estado por meio de <em>React Hooks</em> e consumo de API RESTful conectada ao banco de dados relacional gerenciado <strong>Supabase</strong> (PostgreSQL). A solução contempla perfis de acesso diferenciados para Coordenação, Secretaria, Docentes e Equipe de Manutenção, além de disponibilizar um canal público e responsivo para que qualquer membro da comunidade acadêmica possa comunicar falhas de infraestrutura diretamente de dispositivos móveis sem autenticação. O processo de desenvolvimento apoiou-se na metodologia ágil Kanban, no versionamento colaborativo com Git/GitHub, em práticas de engenharia de software com testes automatizados e em esteiras de integração contínua (CI/CD) no GitHub Actions, com deploy contínuo na nuvem da Vercel.</p>
+  <br>
+  <p style="text-indent:0;"><strong>Palavras-chave:</strong> Frameworks Front-End. React.js. Single Page Application. Gestão de Ambientes. Supabase. DevOps.</p>
+
+  <h1 class="secao">1. INTRODUÇÃO</h1>
+  <p>A gestão eficiente de infraestrutura física é um dos pilares para a qualidade pedagógica e a sustentabilidade operacional de instituições de ensino técnico e superior. O ambiente educacional contemporâneo abrange uma multiplicidade de espaços: salas teóricas convencionais, laboratórios especializados com equipamentos de informática e redes, auditórios para seminários e salas administrativas. A orquestração desses espaços demanda a harmonização constante entre a grade horária das turmas, a disponibilidade dos docentes e as condições operacionais dos recursos materiais instalados.</p>
+  <p>Tradicionalmente, a alocação de salas e o controle de manutenções têm sido executados de forma descentralizada e analógica, fundamentando-se em planilhas eletrônicas independentes mantidas por diferentes setores. Esse cenário engendra falhas recorrentes como sobreposição de horários, ociosidade de salas climatizadas e ausência de indicadores operacionais.</p>
+
+  <h2 class="subsecao">1.1. Objetivos do Trabalho</h2>
+  <p>O objetivo geral deste projeto consiste em planejar, desenvolver, documentar e validar uma aplicação web reativa para a gestão integrada de ambientes institucionais. Dentre os objetivos específicos, destacam-se: implementar uma arquitetura SPA modular em React.js, estruturar a persistência relacional na nuvem Supabase, criar um canal público responsivo de manutenção e automatizar o pipeline de entrega contínua com testes e esteira de CI/CD.</p>
+
+  <h1 class="secao">2. FUNDAMENTAÇÃO TEÓRICA</h1>
+  <p>Conforme destacado por Flanagan (2020), as aplicações web contemporâneas evoluíram substancialmente do paradigma estático tradicional para ecossistemas orientados a componentes e dados assíncronos. O padrão de <em>Single Page Application</em> (SPA) permite que a lógica de apresentação ocorra integralmente no cliente, reduzindo o tráfego de rede e garantindo transições suaves de tela sem recarregamento do navegador (BANKS; PORCELLO, 2021).</p>
+  <p>O React.js diferencia-se pela utilização do <em>Virtual DOM</em> e pelo algoritmo de reconciliação heurístico, o qual sincroniza no documento real exclusivamente os nós que sofreram mutação de estado. Complementarmente, Sommerville (2019) reforça que o desacoplamento entre front-end e serviços back-end mediante APIs RESTful assegura escalabilidade e facilidade de manutenção a longo prazo.</p>
+
+  <h1 class="secao">3. METODOLOGIA E DESENVOLVIMENTO</h1>
+  <p>A equipe TechFlow aplicou práticas ágeis com quadro Kanban para gestão de atividades no GitHub Projects. Os requisitos foram priorizados pelo modelo MoSCoW, elegendo como MVP a autenticação por perfil, cadastros de salas/turmas, alocação com bloqueio de conflitos, canal público de sugestão e tela de triagem técnica da manutenção.</p>
+  <p>A camada visual do SGA foi dividida em componentes funcionais no diretório <code>APP/font_end/src</code>, consumindo serviços unificados através de <code>api.js</code> e folhas de estilo CSS dedicadas por contexto de negócio. A esteira de automação no GitHub Actions executa testes contínuos de integridade e garante que apenas versões aprovadas sejam disponibilizadas para os usuários finais.</p>
+
+  <h1 class="secao">4. RESULTADOS E CONSIDERAÇÕES FINAIS</h1>
+  <p>A solução desenvolvida atingiu com êxito todos os critérios de qualidade funcional, arquitetural e acadêmica. A validação comprovou a impossibilidade de reservas em duplicidade, a perfeita segregação entre sugestões públicas e ordens oficiais de manutenção, bem como a precisão dos indicadores de ocupação e SLA.</p>
+  <p>Como evolução futura, planeja-se a inclusão de aplicativo móvel para leitura direta de tags patrimoniais RFID/QR Code e integração via IoT com sensores inteligentes de presença e consumo elétrico em salas de aula.</p>
+
+  <h1 class="secao">5. REFERÊNCIAS BIBLIOGRÁFICAS</h1>
+  <p style="text-indent:0; margin-bottom:8pt;">BANKS, Alex; PORCELLO, Eve. <strong>Learning React: Modern Patterns for Developing React Apps</strong>. 2. ed. Sebastopol: O'Reilly Media, 2021.</p>
+  <p style="text-indent:0; margin-bottom:8pt;">CHINNATHAMBI, Kirupa. <strong>Aprenda React: O Guia Abrangente para Construir Aplicações Web Modernas</strong>. São Paulo: Novatec, 2022.</p>
+  <p style="text-indent:0; margin-bottom:8pt;">FLANAGAN, David. <strong>JavaScript: O Guia Definitivo</strong>. 7. ed. Porto Alegre: Bookman, 2020.</p>
+  <p style="text-indent:0; margin-bottom:8pt;">PRESSMAN, Roger S.; MAXIM, Bruce R. <strong>Engenharia de Software: Uma Abordagem Profissional</strong>. 9. ed. Porto Alegre: AMGH, 2021.</p>
+  <p style="text-indent:0; margin-bottom:8pt;">SOMMERVILLE, Ian. <strong>Engenharia de Software</strong>. 10. ed. São Paulo: Pearson Education do Brasil, 2019.</p>
+
+</body>
+</html>

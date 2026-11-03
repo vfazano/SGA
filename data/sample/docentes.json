@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "registro": "DOC-1001",
+    "nome": "Prof. Carlos Eduardo Silva",
+    "area": "Engenharia de Software e Banco de Dados"
+  },
+  {
+    "id": 2,
+    "registro": "DOC-1002",
+    "nome": "Profa. Mariana Albuquerque Santos",
+    "area": "Redes de Computadores e Segurança"
+  },
+  {
+    "id": 3,
+    "registro": "DOC-1003",
+    "nome": "Prof. Ricardo Mendes Oliveira",
+    "area": "Inteligência Artificial e Ciência de Dados"
+  }
+]

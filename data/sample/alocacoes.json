@@ -1,0 +1,46 @@
+[
+  {
+    "id": 1,
+    "ambiente_id": 1,
+    "turma_id": 1,
+    "docente_id": 1,
+    "dia_semana": "Segunda-feira",
+    "horario_inicio": "19:00:00",
+    "horario_fim": "22:30:00",
+    "horas_duracao": 3.5,
+    "disciplina": "Desenvolvimento Web II"
+  },
+  {
+    "id": 2,
+    "ambiente_id": 2,
+    "turma_id": 1,
+    "docente_id": 3,
+    "dia_semana": "Terça-feira",
+    "horario_inicio": "19:00:00",
+    "horario_fim": "22:30:00",
+    "horas_duracao": 3.5,
+    "disciplina": "Ciência de Dados Aplicada"
+  },
+  {
+    "id": 3,
+    "ambiente_id": 2,
+    "turma_id": 2,
+    "docente_id": 2,
+    "dia_semana": "Quarta-feira",
+    "horario_inicio": "19:00:00",
+    "horario_fim": "22:30:00",
+    "horas_duracao": 3.5,
+    "disciplina": "Infraestrutura de Redes"
+  },
+  {
+    "id": 4,
+    "ambiente_id": 1,
+    "turma_id": 3,
+    "docente_id": 1,
+    "dia_semana": "Segunda-feira",
+    "horario_inicio": "08:00:00",
+    "horario_fim": "11:30:00",
+    "horas_duracao": 3.5,
+    "disciplina": "Algoritmos e Estruturas de Dados"
+  }
+]

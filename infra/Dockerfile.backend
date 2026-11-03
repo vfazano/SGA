@@ -1,0 +1,23 @@
+# Dockerfile para o Backend Node.js / Express do SGA
+FROM node:20-alpine
+
+WORKDIR /app
+
+# Copia manifestos de pacotes
+COPY APP/beck_end/package*.json ./
+
+# Instala dependências de produção
+RUN npm install --omit=dev
+
+# Copia código-fonte do backend
+COPY APP/beck_end/ ./
+
+# Exposição da porta da API
+EXPOSE 3001
+
+# Variáveis padrão
+ENV NODE_ENV=production
+ENV PORT=3001
+
+# Comando de inicialização
+CMD ["node", "server.js"]

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Plano de Execução e Evidências do Projeto Integrador II - SGA</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 18mm 16mm 18mm 16mm;
+      @bottom-right {
+        content: counter(page);
+      }
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-size: 10.5pt;
+      line-height: 1.55;
+      color: #1f2937;
+      background: #ffffff;
+      margin: 0;
+      padding: 0;
+    }
+    .header-box {
+      border-bottom: 2px solid #2563eb;
+      padding-bottom: 12px;
+      margin-bottom: 24px;
+    }
+    h1 {
+      font-size: 20pt;
+      color: #1e3a8a;
+      margin: 0 0 6px 0;
+      line-height: 1.2;
+    }
+    h2 {
+      font-size: 13pt;
+      color: #2563eb;
+      margin: 0 0 16px 0;
+      font-weight: 600;
+    }
+    h3 {
+      font-size: 12pt;
+      color: #1f2937;
+      margin: 18px 0 8px 0;
+      border-left: 4px solid #2563eb;
+      padding-left: 8px;
+    }
+    h4 {
+      font-size: 11pt;
+      color: #374151;
+      margin: 12px 0 6px 0;
+    }
+    p, ul, ol {
+      margin: 0 0 10px 0;
+    }
+    ul, ol {
+      padding-left: 20px;
+    }
+    li {
+      margin-bottom: 4px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0 18px 0;
+      font-size: 9.5pt;
+    }
+    th, td {
+      border: 1px solid #d1d5db;
+      padding: 7px 10px;
+      text-align: left;
+    }
+    th {
+      background-color: #f3f4f6;
+      color: #111827;
+      font-weight: 600;
+    }
+    tr:nth-child(even) td {
+      background-color: #f9fafb;
+    }
+    .badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 8.5pt;
+      font-weight: 600;
+    }
+    .badge-success { background: #dcfce7; color: #166534; }
+    .badge-info { background: #dbeafe; color: #1e40af; }
+    .card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 12px 16px;
+      margin: 12px 0;
+    }
+    .formula {
+      background: #eff6ff;
+      border-left: 4px solid #3b82f6;
+      padding: 10px 14px;
+      font-family: "Courier New", Courier, monospace;
+      font-size: 10pt;
+      margin: 8px 0;
+      color: #1e3a8a;
+      font-weight: bold;
+    }
+    .code-block {
+      background: #1e293b;
+      color: #f8fafc;
+      padding: 10px 14px;
+      border-radius: 5px;
+      font-family: Consolas, "Courier New", Courier, monospace;
+      font-size: 9pt;
+      overflow-x: auto;
+      margin: 10px 0;
+      line-height: 1.4;
+    }
+    .page-break {
+      page-break-before: always;
+    }
+    .diagram-box {
+      border: 1px solid #cbd5e1;
+      background: #f1f5f9;
+      padding: 12px;
+      border-radius: 6px;
+      margin: 12px 0;
+      font-size: 9pt;
+      font-family: Consolas, monospace;
+      white-space: pre-wrap;
+    }
+    .footer {
+      margin-top: 30px;
+      border-top: 1px solid #e5e7eb;
+      padding-top: 10px;
+      font-size: 8.5pt;
+      color: #6b7280;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header-box">
+    <h1>SGA — Sistema de Gestão de Ambientes</h1>
+    <h2>Plano de Execução e Evidências do Projeto Integrador II</h2>
+    <p><strong>Escopo Temático:</strong> DevOps, Ciência de Dados e Computação em Nuvem | <strong>Versão:</strong> 1.1.0 Final</p>
+    <p><strong>Equipe TechFlow:</strong> Vitor Fazano, Fabio Bitencourt, Guilherme Leite, Ronaldo Soares, Edilaine Paulino, Bianca Cirilo</p>
+    <p><strong>Repositório:</strong> <a href="https://github.com/edilainesolde/SGA">https://github.com/edilainesolde/SGA</a> | <strong>Data:</strong> Novembro de 2026</p>
+  </div>
+
+  <h3>1. Definição do Problema, Usuários e Escopo</h3>
+  <p><strong>Contexto:</strong> A gestão de ambientes físicos (salas teóricas, laboratórios de informática/redes e auditórios) em instituições de ensino técnico e superior é historicamente afetada pela descentralização e dispersão de controles em planilhas eletrônicas independentes.</p>
+  <p><strong>Dores e Fragilidades Identificadas:</strong></p>
+  <ul>
+    <li><strong>Conflito de Horários:</strong> Sobreposição de turmas no mesmo espaço físico por ausência de validação atômica;</li>
+    <li><strong>Ociosidade de Recursos:</strong> Falta de visibilidade em tempo real sobre salas desocupadas para reservas emergenciais de docentes;</li>
+    <li><strong>Lentidão na Manutenção:</strong> Falhas estruturais, elétricas e de climatização demoram dias para chegar ao conhecimento da equipe técnica;</li>
+    <li><strong>Ausência de Métricas:</strong> Inexistência de indicadores consolidados de taxa de ocupação, SLA de reparo e tempo médio de solução (MTTR).</li>
+  </ul>
+
+  <p><strong>Usuários e Partes Interessadas:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Ator / Perfil</th>
+        <th>Responsabilidade Operacional</th>
+        <th>Valor Entregue pela Solução</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>👔 Coordenação</strong></td>
+        <td>Atribuição de disciplinas a docentes e alocação de ambientes</td>
+        <td>Eliminação de conflitos de grade e visão analítica de ocupação</td>
+      </tr>
+      <tr>
+        <td><strong>🗂️ Secretaria</strong></td>
+        <td>Cadastro de cursos, turmas, docentes e relatórios de uso</td>
+        <td>Centralização de registros mestres e integridade referencial</td>
+      </tr>
+      <tr>
+        <td><strong>👨‍🏫 Docente</strong></td>
+        <td>Consulta de grade e reserva pontual de salas disponíveis</td>
+        <td>Verificação instantânea de disponibilidade com bloqueio inteligente</td>
+      </tr>
+      <tr>
+        <td><strong>🔧 Manutenção</strong></td>
+        <td>Triagem, validação de solicitações e execução de ordens</td>
+        <td>Separação entre sugestão e ocorrência oficial, monitorando SLA</td>
+      </tr>
+      <tr>
+        <td><strong>🌐 Público Geral</strong></td>
+        <td>Reporte de defeitos e necessidades de reparo via smartphone</td>
+        <td>Canal aberto ágil sem necessidade de login ou burocracia</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Critérios de Aceite Formais do Projeto:</strong></p>
+  <ul>
+    <li><strong>CA-01:</strong> Ingestão e persistência relacional de turmas e ambientes com integridade referencial garantida;</li>
+    <li><strong>CA-02:</strong> Rejeição imediata de arquivos ou cadastros com horários finais invertidos, capacidades negativas ou duplicidades;</li>
+    <li><strong>CA-03:</strong> Bloqueio automático de reservas para salas marcadas como "Ocupada" ou "Em Manutenção";</li>
+    <li><strong>CA-04:</strong> Uma sugestão pública de manutenção só se converte em ordem de serviço após aprovação formal na triagem técnica;</li>
+    <li><strong>CA-05:</strong> Pipeline de CI/CD automatizado no GitHub Actions executando validações de dados e suíte de testes unitários;</li>
+    <li><strong>CA-06:</strong> Execução reproduzível local via contêineres Docker (docker-compose) e endpoint de healthcheck ativo.</li>
+  </ul>
+
+  <div class="page-break"></div>
+
+  <h3>2. Planejamento de Dados, Fluxo e Arquitetura</h3>
+  <p><strong>Fluxo Mínimo Integrado Ponta a Ponta:</strong></p>
+  <div class="card">
+    <strong>Fonte de Dados</strong> (JSON / CSV / Telemetria) &rarr; 
+    <strong>Ingestão & Validação</strong> (validador_dados.js) &rarr; 
+    <strong>Tratamento & Armazenamento</strong> (PostgreSQL / Supabase) &rarr; 
+    <strong>Análise & Indicadores</strong> (indicadores.js) &rarr; 
+    <strong>API REST</strong> (Express) &rarr; 
+    <strong>Aplicação Web</strong> (React SPA na Vercel) &rarr; 
+    <strong>Observabilidade</strong> (/api/health)
+  </div>
+
+  <p><strong>Esquema Relacional Normalizado (PostgreSQL):</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Tabela</th>
+        <th>Chave Primária</th>
+        <th>Relacionamentos / Chaves Estrangeiras</th>
+        <th>Regras de Integridade</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>ambientes</code></td>
+        <td>id (bigint)</td>
+        <td>1:N com <code>alocacoes_ambiente</code>, 1:N com <code>sugestoes_manutencao</code></td>
+        <td>codigo único, capacidade &gt; 0, status restrito</td>
+      </tr>
+      <tr>
+        <td><code>turmas</code></td>
+        <td>id (bigint)</td>
+        <td>N:1 com <code>cursos</code>, 1:N com <code>alocacoes_ambiente</code></td>
+        <td>codigo único, horario_fim &gt; horario_inicio</td>
+      </tr>
+      <tr>
+        <td><code>docentes</code></td>
+        <td>id (bigint)</td>
+        <td>1:N com <code>turma_componentes_docentes</code></td>
+        <td>registro funcional único</td>
+      </tr>
+      <tr>
+        <td><code>alocacoes_ambiente</code></td>
+        <td>id (bigint)</td>
+        <td>N:1 com <code>ambientes</code>, <code>turmas</code>, <code>docentes</code></td>
+        <td>Bloqueio de horários colidentes no mesmo dia</td>
+      </tr>
+      <tr>
+        <td><code>sugestoes_manutencao</code></td>
+        <td>id (bigint)</td>
+        <td>N:1 com <code>ambientes</code></td>
+        <td>Status: PENDENTE_ANALISE, APROVADA, NAO_APROVADA, FINALIZADA</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>3. Ciência de Dados e Indicadores Estratégicos</h3>
+  <p>O SGA implementa e documenta 4 indicadores matemáticos para suporte à tomada de decisão:</p>
+
+  <div class="card">
+    <h4>Indicador 1: Taxa de Ocupação de Ambientes (TOA)</h4>
+    <div class="formula">TOA (%) = ( Total de Horas Semanais Alocadas / Capacidade Horária da Grade Semanal ) * 100</div>
+    <p><strong>Fonte dos Dados:</strong> <code>alocacoes_ambiente</code> e <code>ambientes</code> (data/sample/alocacoes.json).</p>
+    <p><strong>Interpretação Gerencial:</strong> Taxas &gt; 85% indicam saturação do espaço; taxas &lt; 50% indicam ociosidade crônica, sinalizando à coordenação oportunidade de consolidar turmas para redução de custos com climatização.</p>
+  </div>
+
+  <div class="card">
+    <h4>Indicador 2: Taxa de Cumprimento de SLA de Manutenção (T_SLA)</h4>
+    <div class="formula">SLA (%) = ( Ocorrências Concluídas Dentro do Prazo Limite / Total de Ocorrências Concluídas ) * 100</div>
+    <p><strong>Fonte dos Dados:</strong> <code>sugestoes_manutencao</code> (campos <code>finalizado_em</code>, <code>analisado_em</code> e <code>sla_horas_limite</code>).</p>
+    <p><strong>Interpretação Gerencial:</strong> Meta institucional &ge; 90%. Níveis inferiores a 75% exigem remanejamento de mão de obra técnica para atendimento de falhas emergenciais (ex: vazamentos e falhas elétricas).</p>
+  </div>
+
+  <div class="card">
+    <h4>Indicador 3: MTTR — Mean Time To Repair (Tempo Médio de Reparo em Horas)</h4>
+    <div class="formula">MTTR = Soma( Timestamp Conclusão - Timestamp Aprovação Triagem ) / Total de Reparos</div>
+    <p><strong>Interpretação Gerencial:</strong> Mensura exclusivamente o tempo de atuação técnica da equipe de manutenção, desconsiderando o tempo prévio em que a solicitação pública esteve aguardando triagem.</p>
+  </div>
+
+  <div class="card">
+    <h4>Indicador 4: Taxa de Conversão de Sugestões em Ocorrências (T_CSO)</h4>
+    <div class="formula">Conversão (%) = ( Sugestões Aprovadas na Triagem / Total de Sugestões Avaliadas ) * 100</div>
+    <p><strong>Interpretação Gerencial:</strong> Aferição da qualidade e da pertinência dos reportes enviados pelo público em geral.</p>
+  </div>
+
+  <div class="page-break"></div>
+
+  <h3>4. DevOps, CI/CD e Computação em Nuvem</h3>
+
+  <p><strong>Pipeline de Automação no GitHub Actions (.github/workflows/ci.yml):</strong></p>
+  <ul>
+    <li><strong>Job 1 — Qualidade dos Dados:</strong> Executa <code>npm run validate-data</code>, auditando formatos, chaves nulas e conflitos;</li>
+    <li><strong>Job 2 — Testes Automatizados:</strong> Executa <code>npm test</code> (13 testes automatizados cobrindo fórmulas, limites e regras de negócio);</li>
+    <li><strong>Job 3 — Verificação de Segurança (DevSecOps):</strong> Realiza busca automatizada para impedir o versionamento de arquivos <code>.env</code> com credenciais reais;</li>
+    <li><strong>Job 4 — Compilação e Build:</strong> Valida a compilação do front-end React para garantir ausência de erros em produção.</li>
+  </ul>
+
+  <p><strong>Arquitetura em Nuvem Híbrida:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Camada</th>
+        <th>Tecnologia / Provedor</th>
+        <th>Função Arquitetural</th>
+        <th>Evidência / Configuração</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Front-End SPA</strong></td>
+        <td>Vercel (PaaS / Edge Network)</td>
+        <td>Hospedagem estática com CDN global e SSL automático</td>
+        <td><code>APP/font_end/vercel.json</code></td>
+      </tr>
+      <tr>
+        <td><strong>Banco de Dados</strong></td>
+        <td>Supabase (PostgreSQL 15 Nuvem)</td>
+        <td>Persistência relacional gerenciada com RLS e backups</td>
+        <td><code>APP/Banco_de_dados/schema-relacional.sql</code></td>
+      </tr>
+      <tr>
+        <td><strong>API RESTful</strong></td>
+        <td>Node.js & Express 5</td>
+        <td>Regras de negócio, cálculo de indicadores e healthcheck</td>
+        <td><code>APP/beck_end/server.js</code></td>
+      </tr>
+      <tr>
+        <td><strong>Ambiente Local</strong></td>
+        <td>Docker & Docker Compose</td>
+        <td>Execução local 100% determinística e reproduzível</td>
+        <td><code>docker-compose.yml</code></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Observabilidade e Healthcheck:</strong></p>
+  <p>O endpoint oficial <code>GET /api/health</code> retorna:</p>
+  <div class="code-block">{ "ok": true, "storage": "supabase", "timestamp": "2026-11-03T22:30:00Z" }</div>
+
+  <p><strong>Roteiro de Rollback e Recuperação de Falhas (Runbook):</strong></p>
+  <ul>
+    <li><strong>Rollback Front-End (Vercel):</strong> Acesso à aba <em>Deployments</em> &rarr; <em>Instant Rollback</em> (restaura a versão anterior estável em menos de 10 segundos);</li>
+    <li><strong>Rollback de Código (Git):</strong> Reversão atômica via <code>git revert &lt;commit-hash&gt;</code> e novo push para disparar a esteira;</li>
+    <li><strong>Recuperação de Banco de Dados:</strong> Painel do Supabase com restauração de snapshot (Point-in-Time Recovery).</li>
+  </ul>
+
+  <h3>5. Extensão Opcional — Automação Industrial e Telemetria IoT (Bônus)</h3>
+  <p>Para o cumprimento da extensão opcional com bônus de pontuação, o projeto implementou o subsistema de sensoriamento predial inteligente:</p>
+  <ul>
+    <li><strong>Sensores Simulados:</strong> Presença Infravermelha (PIR HC-SR501), Temperatura/Climatização (DHT22) e Corrente Elétrica (SCT-013);</li>
+    <li><strong>Simulador Autônomo:</strong> Script <code>automation/simulador_sensores.js</code> produz leituras em tempo real e emite alertas automáticos caso a temperatura exceda 26.5°C com a sala desocupada;</li>
+    <li><strong>Segurança Operacional:</strong> Operação estritamente isolada de máquinas de alta tensão, sem risco físico ou quebra do fluxo acadêmico principal.</li>
+  </ul>
+
+  <h3>6. Roteiro de Demonstração Rápida para os Avaliadores</h3>
+  <div class="code-block">
+# 1. Validação de dados e testes automatizados na raiz do repositório:
+npm run ci
+
+# 2. Execução da simulação de telemetria IoT de sensores:
+node automation/simulador_sensores.js
+
+# 3. Subida do ecossistema local reproduzível via Docker:
+docker compose up -d
+
+# 4. Verificação de saúde da API:
+curl http://localhost:3001/api/health
+  </div>
+
+  <div class="footer">
+    SGA — Sistema de Gestão de Ambientes | Projeto Integrador II | Equipe TechFlow — 2026
+  </div>
+
+</body>
+</html>

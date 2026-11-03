@@ -1,731 +1,228 @@
-# 🏢 Projeto — SGA: Sistema de Gestão de Ambientes
+# 🏢 SGA — Sistema de Gestão de Ambientes
+> **Organização • Controle • Eficiência • Nuvem • Ciência de Dados • DevOps**
 
-> **Sistema de Gestão de Ambientes | Organização • Controle • Eficiência**
-
-**👥 Nome do grupo:** TechFlow 📥
-**📅 Reunião de definição do escopo:** 08/09/2026
-**🎓 Etapa:** Segundo semestre
-**📄 Documento:** Escopo inicial — Versão 01
+[![CI/CD Pipeline](https://github.com/edilainesolde/SGA/actions/workflows/ci.yml/badge.svg)](https://github.com/edilainesolde/SGA/actions/workflows/ci.yml)
+[![Node Version](https://img.shields.io/badge/Node.js-v20%2B-brightgreen.svg)](https://nodejs.org/)
+[![React Version](https://img.shields.io/badge/React-18-blue.svg)](https://react.dev/)
+[![Database](https://img.shields.io/badge/PostgreSQL-Supabase-emerald.svg)](https://supabase.com/)
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 ---
-## 👥 Integrantes
+
+## 👥 Integrantes da Equipe TechFlow
 
 | Foto | Nome | GitHub | Função no Projeto |
-|------|------|--------|-------------------|
-| <img src="https://github.com/fabiobitencourt93.png" width="50px"> | **Fabio Bitencourt** | [fabiobitencourt93](https://github.com/fabiobitencourt93) | Em andamento |
-| <img src="https://github.com/guilhermelleiteads.png" width="50px"> | **Guilherme Leite** | [guilhermeleiteads](https://github.com/guilhermelleiteads) | Em andamento |
-| <img src="https://github.com/ronaldorfas.png" width="50px"> | **Ronaldo Soares** | [Ronaldo Soares](https://github.com/ronaldorfas) | Em andamento |
-| <img src="https://github.com/vfazano.png" width="50px"> | **Vitor Fazano** | [vfazano](https://github.com/vfazano) | Em andamento |
-| <img src="https://github.com/edilainesolde.png" width="50px"> | **Edilaine Paulino** | [edilainesolde](https://github.com/edilainesolde) | Em andamento |
-| <img src="https://github.com/biancaciriloads.png" width="50px"> | **Bianca Cirilo** | [biancacirilo](https://github.com/biancaciriloads) | Em andamento |
-
-
----
-
-
-
-# 🎯 1. Contexto
-
-O projeto **SGA – Sistema de Gestão de Ambientes** tem como objetivo aperfeiçoar a solução desenvolvida no primeiro semestre, ampliando suas funcionalidades para facilitar a **gestão, ocupação, consulta, reserva e manutenção dos espaços físicos da instituição**.
-
-A proposta é centralizar as informações sobre **salas, turmas, docentes, horários, reservas, patrimônio e manutenção**, proporcionando maior organização, controle e eficiência na utilização dos ambientes.
-
-Além das funcionalidades administrativas, o sistema contará com um **canal público para comunicação de necessidades de manutenção**, permitindo que qualquer usuário informe um problema identificado em um ambiente sem necessidade de possuir acesso ou login no sistema.
-
-As informações enviadas pelo canal público serão encaminhadas ao **setor de Manutenção**, que realizará uma análise e determinará se a solicitação é procedente e se deverá ser convertida em uma ocorrência de manutenção.
+|:---:|---|---|---|
+| <img src="https://github.com/vfazano.png" width="55px" style="border-radius:50%"> | **Vitor Fazano** | [@vfazano](https://github.com/vfazano) | Engenharia de Dados, DevOps, CI/CD e Indicadores |
+| <img src="https://github.com/fabiobitencourt93.png" width="55px" style="border-radius:50%"> | **Fabio Bitencourt** | [@fabiobitencourt93](https://github.com/fabiobitencourt93) | Back-End, API Express e Integração Supabase |
+| <img src="https://github.com/guilhermelleiteads.png" width="55px" style="border-radius:50%"> | **Guilherme Leite** | [@guilhermeleiteads](https://github.com/guilhermelleiteads) | Front-End React, UX/UI, Atribuições e Alocações |
+| <img src="https://github.com/ronaldorfas.png" width="55px" style="border-radius:50%"> | **Ronaldo Soares** | [@ronaldorfas](https://github.com/ronaldorfas) | Infraestrutura, Vercel, Docker e Observabilidade |
+| <img src="https://github.com/edilainesolde.png" width="55px" style="border-radius:50%"> | **Edilaine Paulino** | [@edilainesolde](https://github.com/edilainesolde) | Front-End, Canal Público, Cadastros e Gestão Ágil |
+| <img src="https://github.com/biancaciriloads.png" width="55px" style="border-radius:50%"> | **Bianca Cirilo** | [@biancaciriloads](https://github.com/biancaciriloads) | Qualidade, Modelagem Relacional e Casos de Uso |
 
 ---
 
-# 🚀 2. Objetivo Geral
+## 📚 Documentação Obrigatória do Projeto
 
-Desenvolver uma solução para gerenciamento dos espaços físicos, permitindo:
-
-* 🏫 Cadastro de salas, turmas e docentes;
-* 📅 Alocação de aulas e ambientes;
-* 🔎 Consulta da disponibilidade das salas;
-* 📌 Controle e reserva de ambientes;
-* 📊 Relatórios de utilização;
-* 🏷️ Controle patrimonial por **RFID e/ou QR Code**;
-* 🔧 Registro e acompanhamento de ocorrências de manutenção;
-* 🌐 Canal público para sugestão de manutenção;
-* 🔎 Triagem e validação das solicitações pelo setor de manutenção;
-* ⏱️ Monitoramento de **SLA** e indicadores.
-
-> **Objetivo central:** tornar a gestão dos ambientes mais organizada, integrada e eficiente, facilitando também a comunicação de problemas relacionados à infraestrutura.
+| Documento | Formato Obrigatório | Fonte Editável | Descrição |
+|---|:---:|:---:|---|
+| **Plano do Projeto Integrador II** | 📄 [**Baixar PDF**](docs/plano-projeto-integrador-ii.pdf) | 📝 [Markdown](docs/plano-projeto-integrador-ii.md) | Plano completo com DevOps, Ciência de Dados, Nuvem e Evidências |
+| **Relatório Acadêmico (Mini TCC)** | 📄 [**Baixar PDF**](docs/relatorio-academico-mini-tcc.pdf) | 📝 [Markdown](docs/relatorio-academico-mini-tcc.md) | Mini TCC no formato ABNT (Frameworks Front-End) |
+| **Decisões Arquiteturais (ADRs)** | 🏛️ [Acessar ADRs](docs/decisoes/) | — | Registros de justificativa técnica, custos, riscos e dados |
+| **Casos de Uso e Diagramas** | 📘 [Visualizar Casos de Uso](Diagramas/SGA_Casos_de_Uso.md) | — | Diagramas UML, regras de negócio e fluxos de atores |
 
 ---
 
-# 🔐 3. Perfis de Acesso
+## 🎯 1. O Problema e o Valor Entregue
 
-## 🌐 Acesso Público
+Em instituições de ensino, o acompanhamento de salas de aula, laboratórios, auditórios e solicitações de reparo é frequentemente conduzido por meio de planilhas eletrônicas desconexas. Isso provoca:
+1. **Conflito de horários** em salas entre turmas e docentes;
+2. **Subutilização de laboratórios** e desperdício de energia elétrica com salas climatizadas vazias;
+3. **Lentidão no atendimento a chamados de manutenção** (ar-condicionado, projetor, iluminação);
+4. **Ausência de métricas** de tempo médio de solução (MTTR) e taxa de ocupação dos espaços físicos.
 
-O SGA disponibilizará, diretamente na **página principal**, um ícone de acesso rápido:
-
-> 🔧 **Sugerir Manutenção**
-
-Essa funcionalidade será **pública**, não exigindo login ou autenticação.
-
-O objetivo é permitir que qualquer usuário que identifique um problema em um ambiente possa comunicar a situação ao setor responsável.
-
-O acesso público ficará limitado ao envio da sugestão, não permitindo acesso às demais funcionalidades administrativas do sistema.
-
----
-
-## 👔 Coordenação
-
-Responsável pelas principais funções administrativas:
-
-* Cadastrar docentes, turmas e salas;
-* Gerenciar horários;
-* Alocar salas;
-* Relacionar aula, turma, docente, sala e horário;
-* Consultar relatórios de utilização.
+O **SGA** resolve essas dores centralizando todo o ciclo operacional em uma aplicação web integrada, oferecendo:
+* **Canal Público de Manutenção (Sem Login):** Qualquer pessoa da comunidade acadêmica pode reportar uma avaria por smartphone;
+* **Triagem e Validação:** Separação estrita entre sugestão pública e ordem de serviço oficial;
+* **Reserva com Prevenção de Conflito:** Bloqueio automático para salas com status "Ocupada" ou "Em Manutenção";
+* **Painel Analítico:** Indicadores de Ciência de Dados com fórmulas auditáveis para apoio à tomada de decisão.
 
 ---
 
-## 🗂️ Secretaria
+## 🏛️ 2. Arquitetura da Solução e Fluxo de Dados
 
-Poderá:
+```mermaid
+flowchart TD
+    subgraph Entrada["1. Fontes de Dados & Entrada"]
+        Publico[Comunidade Acadêmica<br>Canal Público sem Login]
+        Usuarios[Coordenação / Secretaria / Docentes<br>Painel Autenticado]
+        IoT[Sensores Prediais / IoT<br>Presença, Temperatura, Consumo]
+        DataSample[Amostras Sintéticas<br>data/sample/*.json]
+    end
 
-* Cadastrar docentes e turmas;
-* Consultar disponibilidade e utilização das salas;
-* Pesquisar informações por sala, turma, docente e período.
+    subgraph Ingestao["2. Ingestão & Validação"]
+        Validador[validador_dados.js<br>Validação de Esquema e Horários]
+    end
 
----
+    subgraph Nuvem["3. Computação em Nuvem"]
+        Vercel[Vercel Edge Network<br>React Front-End SPA]
+        API[Node.js / Express API<br>Rotas & Healthcheck /api/health]
+        Supabase[(PostgreSQL em Nuvem<br>Tabelas Normalizadas & Views)]
+    end
 
-## 👨‍🏫 Docente
+    subgraph DataScience["4. Ciência de Dados & Indicadores"]
+        Indicadores[indicadores.js<br>Taxa de Ocupação, SLA, MTTR, Conversão]
+    end
 
-Poderá:
+    subgraph DevOps["5. DevOps & Qualidade"]
+        GitHubActions[GitHub Actions CI/CD<br>Lint, Testes, Build & DevSecOps]
+        DockerCompose[Docker Compose<br>Execução Local 100% Reproduzível]
+    end
 
-* Consultar sua alocação;
-* Consultar salas disponíveis;
-* Filtrar salas e horários;
-* Realizar reservas de ambientes.
-
-A reserva deverá considerar:
-
-**Sala + Data + Horário + Docente + NIF + Finalidade**
-
-> ℹ️ **Observação:** a informação de turma será opcional.
-
----
-
-## 🔧 Manutenção
-
-Responsável por:
-
-* Receber sugestões de manutenção;
-* Analisar as solicitações recebidas;
-* Validar a existência do problema;
-* Classificar as ocorrências;
-* Definir prioridade;
-* Aprovar ou não a solicitação;
-* Transformar uma sugestão aprovada em ocorrência;
-* Acompanhar o atendimento;
-* Registrar as etapas da manutenção;
-* Finalizar ocorrências;
-* Acompanhar SLA e indicadores.
-
----
-
-# ⚙️ 4. Funcionalidades Principais
-
-## 🏫 Gestão de Salas
-
-* Cadastro de salas;
-* Cadastro de turmas;
-* Cadastro de docentes;
-* Controle de horários;
-* Alocação de ambientes;
-* Consulta de disponibilidade;
-* Relatório central de utilização.
+    Publico --> Vercel
+    Usuarios --> Vercel
+    IoT --> Validador
+    DataSample --> Validador
+    Validador --> API
+    Vercel --> API
+    API --> Supabase
+    API --> Indicadores
+    GitHubActions -.->|Valida| API
+    GitHubActions -.->|Valida| Vercel
+```
 
 ---
 
-# 📅 Reserva de Salas
+## 📈 3. Indicadores de Ciência de Dados
 
-## 🔄 Fluxo da Reserva
+O SGA calcula e monitora **4 indicadores estratégicos** com fórmulas matemáticas implementadas em [`data_science/indicadores.js`](data_science/indicadores.js):
 
-**Selecionar sala**
-
-↓
-
-**Selecionar data**
-
-↓
-
-**Selecionar horário**
-
-↓
-
-**🔎 Verificar status da sala**
-
-↓
-
-**Informar dados**
-
-↓
-
-**✅ Confirmar reserva**
-
-Após a seleção da **data e do horário**, o sistema deverá consultar automaticamente o status da sala.
+| Indicador | Fórmula Matemática | Fonte dos Dados | Interpretação & Ação Gerencial |
+|---|---|---|---|
+| **1. Taxa de Ocupação de Ambientes (TOA)** | $\frac{\sum \text{Horas Semanais Alocadas}}{\text{Horas Úteis da Grade}} \times 100$ | `alocacoes_ambiente`, `turmas`, `ambientes` | $\ge 85\%$ indica saturação; $< 50\%$ indica ociosidade, permitindo remanejamento de turmas. |
+| **2. Taxa de Cumprimento de SLA** | $\frac{\text{Chamados Concluídos no Prazo}}{\text{Total de Chamados Concluídos}} \times 100$ | `sugestoes_manutencao` (`finalizado_em`, `sla_horas_limite`) | Meta $\ge 90\%$. Taxas baixas apontam gargalos no atendimento da infraestrutura física. |
+| **3. MTTR (Tempo Médio de Reparo)** | $\frac{\sum (\text{Finalização} - \text{Aprovação Triagem})}{N}$ | `sugestoes_manutencao` (`analisado_em`, `finalizado_em`) | Mede em horas a agilidade técnica após validação, expurgando o tempo de espera da triagem. |
+| **4. Taxa de Conversão de Sugestões** | $\frac{\text{Sugestões Aprovadas na Triagem}}{\text{Total de Sugestões Avaliadas}} \times 100$ | `sugestoes_manutencao` (`status`) | Avalia a acurácia dos alertas enviados pela comunidade acadêmica no canal público. |
 
 ---
 
-## 📊 Status da Sala
+## ⚡ 4. Como Executar o Projeto Localmente
 
-|        Status        | Situação                                   | Ação do sistema                    |
-| :------------------: | ------------------------------------------ | ---------------------------------- |
-|     🟢 **LIVRE**     | Sala disponível para o horário selecionado | ✅ Permitir continuar com a reserva |
-|    🔴 **OCUPADA**    | Sala possui reserva ou alocação no horário | 🚫 Bloquear nova reserva           |
-| 🟠 **EM MANUTENÇÃO** | Sala indisponível para utilização          | 🚫 Bloquear nova reserva           |
+### Opção A: Execução Determinística com Docker Compose (Recomendada)
+Para levantar o banco PostgreSQL local, o backend Express e o frontend React com um único comando:
 
----
+```bash
+# 1. Clonar o repositório
+git clone https://github.com/edilainesolde/SGA.git
+cd SGA
 
-## 🟢 Sala Livre
+# 2. Inicializar os contêineres
+docker compose up -d --build
 
-Quando a sala estiver disponível:
+# 3. Acessar a aplicação:
+# - Front-End Web: http://localhost:3000
+# - Backend API: http://localhost:3001/api/health
+# - Banco PostgreSQL: localhost:5432 (database: sga_db, user: sga_user)
+```
 
-> **Status: 🟢 LIVRE**
->
-> A sala está disponível para o horário selecionado.
->
-> **O usuário poderá prosseguir com a reserva.**
-
----
-
-## 🔴 Sala Ocupada
-
-Quando existir uma reserva ou alocação:
-
-> **Status: 🔴 OCUPADA**
->
-> A sala já possui uma reserva ou alocação para este horário.
->
-> **Não será possível realizar uma nova reserva.**
+Para encerrar os serviços:
+```bash
+docker compose down -v
+```
 
 ---
 
-## 🟠 Sala em Manutenção
+### Opção B: Execução Manual com Node.js
 
-Quando a sala estiver indisponível para manutenção:
+#### 1. Backend (API REST)
+```bash
+cd APP/beck_end
+cp .env.example .env
+npm install
+npm run dev
+```
+A API estará ativa em `http://localhost:3001` (Healthcheck: `http://localhost:3001/api/health`).
 
-> **Status: 🟠 EM MANUTENÇÃO**
->
-> Esta sala está indisponível devido a uma manutenção programada ou ocorrência em andamento.
->
-> **Não será possível realizar uma reserva.**
-
----
-
-## 🔒 Validação da Reserva
-
-O sistema deverá realizar uma **nova validação da disponibilidade no momento da confirmação da reserva**, evitando conflitos ou reservas simultâneas para o mesmo ambiente, data e horário.
-
-A reserva deverá considerar:
-
-**Sala + Data + Horário + Docente + NIF + Finalidade**
-
-> ℹ️ A informação de turma será opcional.
+#### 2. Front-End (React SPA)
+```bash
+cd APP/font_end
+npm install
+npm start
+```
+A aplicação abrirá no navegador em `http://localhost:3000`.
 
 ---
 
-# 🌐 5. Canal Público — Sugestão de Manutenção
+## 🧪 5. Automação de Testes e Validação de Dados
 
-O sistema deverá disponibilizar na **página principal** um ícone de acesso rápido para comunicação de problemas relacionados aos ambientes.
+Na raiz do repositório, execute os scripts de automação:
 
-### 🔧 Sugerir Manutenção
+```bash
+# 1. Executa a validação de esquema e integridade dos dados sintéticos:
+npm run validate-data
 
-O usuário poderá acessar essa funcionalidade **sem realizar login**.
+# 2. Executa a suíte de 13 testes unitários automatizados:
+npm test
 
-A finalidade é facilitar a comunicação de problemas identificados nas salas e demais ambientes da instituição.
+# 3. Executa todo o fluxo de CI localmente:
+npm run ci
+```
 
-### 📝 Informações da Sugestão
-
-O formulário poderá solicitar:
-
-* 👤 Nome do solicitante;
-* 📧 E-mail ou contato, quando aplicável;
-* 📍 Local/sala;
-* 📝 Descrição do problema;
-* ⚠️ Tipo de ocorrência;
-* 📅 Data e hora da identificação;
-* 📷 Foto opcional;
-* 💬 Observações adicionais.
-
----
-
-## 🔄 Fluxo da Sugestão
-
-**🔧 Usuário acessa "Sugerir Manutenção"**
-
-↓
-
-**📝 Preenche o formulário**
-
-↓
-
-**📤 Envia a sugestão**
-
-↓
-
-**📥 Setor de Manutenção recebe**
-
-↓
-
-**🔎 Manutenção realiza a análise**
-
-↓
-
-**❓ Problema é considerado válido?**
-
-### ❌ Não
-
-**Sugestão não aprovada**
-
-↓
-
-Registro da análise
-
-### ✅ Sim
-
-**Sugestão aprovada**
-
-↓
-
-**🔧 Geração de ocorrência de manutenção**
-
-↓
-
-**▶️ Atendimento**
-
-↓
-
-**✅ Finalização**
+### Resultados dos Testes Automatizados:
+```
+✔ Indicador 1: Taxa de Ocupação - cálculo correto
+✔ Indicador 1: Taxa de Ocupação - validação de limites e divisão por zero
+✔ Indicador 2: Taxa de Cumprimento de SLA - cálculo correto
+✔ Indicador 3: MTTR (Tempo Médio de Reparo) - cálculo em horas
+✔ Indicador 4: Taxa de Conversão de Sugestões em Ocorrências
+✔ Regra de Reserva - Permite reserva apenas se sala estiver Disponível/LIVRE
+✔ Regra de Triagem - Separação estrita entre sugestão pública e ocorrência oficial
+✔ Validação de Ambientes - deve aprovar dados válidos
+✔ Validação de Ambientes - deve rejeitar capacidade negativa ou zero
+✔ Validação de Ambientes - deve rejeitar código duplicado
+✔ Validação de Turmas - deve rejeitar horário final anterior ao inicial
+✔ Validação de Alocações - deve detectar conflito de horário no mesmo ambiente
+✔ Validação de Manutenção - deve rejeitar status desconhecido
+ℹ tests 13 | pass 13 | fail 0
+```
 
 ---
 
-# 🔎 6. Triagem e Validação da Manutenção
+## 🏭 6. Extensão Opcional — Automação Industrial e Telemetria IoT (Bônus)
 
-As informações enviadas pelo acesso público **não serão consideradas automaticamente como ocorrências de manutenção**.
-
-O setor de Manutenção será responsável pela análise inicial da solicitação.
-
-Durante a triagem, poderá verificar:
-
-* Se o problema realmente existe;
-* Se a informação fornecida é suficiente;
-* Se o local informado está correto;
-* Se a solicitação pertence ao setor de Manutenção;
-* Qual o tipo de problema;
-* Qual a prioridade;
-* Se é necessária uma vistoria;
-* Se será necessário algum recurso para o atendimento.
+O SGA integra um simulador de sensores IoT prediais para monitoramento em tempo real:
+* **Sensores Simulados:** Presença (PIR HC-SR501), Temperatura Ambiente (DHT22) e Consumo Elétrico (SCT-013);
+* **Executar Simulação de Telemetria:**
+  ```bash
+  node automation/simulador_sensores.js
+  ```
+* **Massa de Dados Sintéticos de Sensores:** [`data/sample/telemetria_sensores.json`](data/sample/telemetria_sensores.json);
+* **Isolamento e Segurança:** A extensão opera estritamente com dados sintéticos sem conexão física de risco a máquinas pesadas.
 
 ---
 
-## 📊 Status da Solicitação
+## 🔄 7. Roteiro de Observabilidade e Recuperação de Falhas (Runbook)
 
-|           Status           | Descrição                                                           |
-| :------------------------: | ------------------------------------------------------------------- |
-| 🟡 **PENDENTE DE ANÁLISE** | Sugestão recebida e aguardando avaliação                            |
-|     ❌ **NÃO APROVADA**     | Problema não identificado ou solicitação considerada não procedente |
-|       ✅ **APROVADA**       | Problema validado pela Manutenção                                   |
-|    🔧 **EM ATENDIMENTO**   | Atendimento ou manutenção iniciado                                  |
-|      🏁 **FINALIZADA**     | Problema solucionado                                                |
+* **Healthcheck do Sistema:** O endpoint `GET /api/health` retorna `200 OK` atestando conectividade ativa com a nuvem;
+* **Recuperação de Falha Front-End (Vercel):** No painel da Vercel &rarr; *Deployments* &rarr; selecionar versão anterior estável &rarr; *Instant Rollback*;
+* **Recuperação de Falha no Repositório (Git):** Executar `git revert <commit-hash>` e push para reativar o pipeline de CI;
+* **Restauração de Dados (Supabase):** Utilização do recurso nativo de Point-in-Time Recovery no painel do Supabase.
 
 ---
 
-# 🔧 7. Módulo de Manutenção
+## 📋 8. Checklist de Verificação dos Requisitos de Entrega
 
-O Módulo de Manutenção poderá ser desenvolvido como alternativa ou evolução do projeto, principalmente caso a implantação do RFID não seja viável dentro do prazo.
-
-O módulo será responsável por transformar as **sugestões validadas** em ocorrências de manutenção.
-
----
-
-## 📝 Registro de Ocorrências
-
-Após a validação pelo setor de Manutenção, a sugestão poderá ser convertida em uma ocorrência.
-
-A ocorrência poderá conter:
-
-* 👤 Solicitante;
-* 👥 Turma, quando aplicável;
-* 📍 Local/sala;
-* 📝 Descrição;
-* 🕐 Data e hora;
-* 📷 Foto;
-* ⚠️ Tipo de ocorrência;
-* 🔎 Resultado da análise;
-* 👷 Responsável pelo atendimento;
-* 🚦 Prioridade;
-* 📊 Status.
+- [x] `docs/plano-projeto-integrador-ii.pdf` existe, abre e está legível;
+- [x] Fonte editável `docs/plano-projeto-integrador-ii.md` versionada e atualizada;
+- [x] Relatório acadêmico Mini TCC ABNT `docs/relatorio-academico-mini-tcc.md` e PDF gerado;
+- [x] Registros de Decisões Arquiteturais em `docs/decisoes/` (ADR-001 a ADR-005);
+- [x] Conjunto de dados sintéticos em `data/sample/` (JSON, CSV e validador);
+- [x] Quatro indicadores de Ciência de Dados com fórmula matemática e interpretação documentada;
+- [x] Suíte de testes automatizados em `tests/` com aprovação contínua no GitHub Actions;
+- [x] Configuração reproduzível via `docker-compose.yml` e Dockerfiles;
+- [x] Separação de credenciais via `.env.example` sem tokens versionados;
+- [x] Extensão de automação industrial opcional integrada e documentada em `automation/`.
 
 ---
 
-## Exemplos de ocorrências
-
-* 💧 Vazamento;
-* ❄️ Ar-condicionado com defeito;
-* 💡 Lâmpada queimada;
-* 🖥️ Equipamento danificado;
-* ⚡ Problemas elétricos;
-* 🏗️ Problemas estruturais;
-* 🚪 Problemas em portas ou fechaduras;
-* 🪑 Problemas em mesas, cadeiras ou mobiliário;
-* 🧹 Problemas relacionados à infraestrutura do ambiente.
-
----
-
-# 🔄 8. Fluxo de Atendimento
-
-Após a validação da solicitação:
-
-**📝 Sugestão recebida**
-
-↓
-
-**📥 Pendente de análise**
-
-↓
-
-**🔎 Em análise**
-
-↓
-
-**✅ Aprovada**
-
-↓
-
-**🔧 Em atendimento / Em manutenção**
-
-↓
-
-**🏁 Finalizada**
-
-O sistema deverá registrar o histórico de cada etapa, incluindo:
-
-* Data;
-* Hora;
-* Responsável;
-* Status;
-* Observações;
-* Ações realizadas.
-
----
-
-# ⏱️ 9. SLA e Indicadores
-
-O módulo de manutenção deverá permitir acompanhar:
-
-* ⏱️ Tempo de resposta;
-* ▶️ Tempo até o início do atendimento;
-* 🛠️ Tempo de solução;
-* ⌛ Tempo total;
-* 🟢 SLA cumprido;
-* 🔴 SLA excedido.
-
-> ℹ️ **Importante:** os indicadores de SLA deverão considerar as ocorrências **aprovadas/validadas pela Manutenção**, evitando contabilizar como tempo de atendimento o período em que a solicitação ainda estava em análise.
-
----
-
-## 📈 Indicadores
-
-Também poderão ser apresentados:
-
-* Total de sugestões recebidas;
-* Total de sugestões aprovadas;
-* Total de sugestões não aprovadas;
-* Total de ocorrências;
-* Ocorrências em andamento;
-* Ocorrências finalizadas;
-* Tempo médio de atendimento;
-* Locais com maior número de ocorrências;
-* Tipos de problemas mais recorrentes;
-* Quantidade de solicitações por período;
-* Percentual de sugestões convertidas em ocorrências;
-* Percentual de SLA cumprido;
-* Percentual de SLA excedido.
-
----
-
-# 🏷️ 10. Controle Patrimonial
-
-Será analisada a utilização de tecnologias para identificação e controle dos patrimônios existentes nos ambientes.
-
-## 📡 RFID
-
-Para identificação e controle dos patrimônios existentes nos ambientes.
-
-## 📱 QR Code
-
-Como alternativa ou complemento ao RFID, permitindo acessar um **checklist patrimonial por sala**.
-
-### Exemplo — Sala 203
-
-☑️ Computador
-
-☑️ Projetor
-
-☑️ Ar-condicionado
-
-☑️ Mesa
-
-☑️ Cadeiras
-
-☑️ Quadro
-
-☑️ Outros equipamentos
-
----
-
-# 📊 11. Relatórios
-
-O sistema deverá permitir consultas e relatórios por:
-
-* Sala;
-* Turma;
-* Docente;
-* Período;
-* Status;
-* Tipo de ocorrência;
-* Local;
-* Responsável;
-* Prioridade;
-* SLA.
-
-As informações poderão incluir:
-
-**Sala + Turma + Docente + Data + Horário + Status**
-
-Para manutenção:
-
-**Local + Tipo de ocorrência + Data + Status + Prioridade + Responsável + SLA**
-
----
-
-# ⭐ 12. Prioridades do Projeto
-
-## 🥇 Prioridade 1 — Essencial
-
-* Mapeamento dos espaços;
-* Análise de requisitos;
-* Login e controle de acesso;
-* Cadastro de salas;
-* Cadastro de docentes;
-* Cadastro de turmas;
-* Alocação de salas;
-* Controle de horários;
-* Relatório de utilização.
-
----
-
-## 🥈 Prioridade 2 — Evolução
-
-* 📅 Reserva de salas;
-* 🔎 Verificação automática do status da sala;
-* 🔒 Bloqueio de reserva para salas ocupadas;
-* 🔧 Bloqueio de reserva para salas em manutenção;
-* 🔍 Filtros;
-* 📱 QR Code;
-* ☑️ Checklist patrimonial;
-* 🌐 Acesso público para sugestão de manutenção;
-* 📥 Recebimento e triagem das sugestões pelo setor de Manutenção.
-
----
-
-## 🥉 Prioridade 3 — Conforme viabilidade
-
-* 📡 RFID;
-* 🏷️ Controle patrimonial;
-* 🔧 Módulo de manutenção;
-* 📚 Histórico de ocorrências;
-* ⏱️ SLA;
-* 📊 Indicadores;
-* 📷 Upload de fotos;
-* 🔎 Validação e classificação das solicitações.
-
----
-
-# 🗺️ 13. Roadmap
-
-### 🔹 Fase 1 — Levantamento
-
-* Mapeamento;
-* Processos;
-* Requisitos;
-* Validação.
-
----
-
-### 🔹 Fase 2 — Modelagem
-
-* Estrutura do sistema;
-* Perfis;
-* Banco de dados;
-* Fluxos;
-* Modelagem das ocorrências;
-* Fluxo de triagem da manutenção.
-
----
-
-### 🔹 Fase 3 — Desenvolvimento
-
-* Login;
-* Perfis;
-* Cadastros;
-* Salas;
-* Turmas;
-* Docentes;
-* Alocações;
-* Reservas;
-* Verificação de disponibilidade;
-* Relatórios.
-
----
-
-### 🔹 Fase 4 — Canal Público
-
-* Página pública de sugestão;
-* Formulário de manutenção;
-* Registro da solicitação;
-* Encaminhamento para o setor de Manutenção;
-* Triagem;
-* Aprovação ou não aprovação.
-
----
-
-### 🔹 Fase 5 — Evoluções
-
-* QR Code;
-* Checklist;
-* Estudo/implantação do RFID.
-
----
-
-### 🔹 Fase 6 — Plano Alternativo
-
-* Módulo de manutenção;
-* Ocorrências;
-* Atendimento;
-* Histórico;
-* SLA;
-* Relatórios;
-* Indicadores.
-
----
-
-### 🔹 Fase 7 — Testes
-
-* Testes funcionais;
-* Testes de perfis;
-* Testes de reservas;
-* Testes de disponibilidade e conflitos;
-* Testes de bloqueio de salas ocupadas;
-* Testes de bloqueio de salas em manutenção;
-* Testes do acesso público;
-* Testes do formulário de manutenção;
-* Testes da triagem;
-* Testes de aprovação e não aprovação;
-* Testes de conversão de sugestão em ocorrência;
-* Testes de relatórios;
-* Validação com usuários.
-
----
-
-# 🏆 14. Resultado Esperado
-
-Ao final do projeto, espera-se disponibilizar uma **solução integrada para facilitar a gestão dos ambientes da instituição**, proporcionando maior controle sobre utilização, disponibilidade, reservas, patrimônio e manutenção.
-
-### 👔 Coordenação
-
-**Cadastrar turma/docente** 
-**Alocar de ambiente** 
-**Atribuição de aula** 
-**Relatórios**
-
-### 🗂️ Secretaria
-
-**Cadastrar turma/docente**
-**Relatórios**
-
-### 👨‍🏫 Docente
-
-**Solicitação de ambiente** 
-**Reslatorio**
-
-### 🔧 Manutenção
-
-**Visualização de sugestões**
-**Direcionamento de manutenção**
-
-### 👥 Publico
-
-**Home page** 
-**Sujestão de manutenção**
-
----
-
-# 🔐 15. Regra de Negócio — Sugestão x Ocorrência
-
-Uma das principais regras do módulo de manutenção será a separação entre **sugestão** e **ocorrência**.
-
-A sugestão enviada pelo usuário representa apenas uma **comunicação de um possível problema**.
-
-Ela somente será transformada em uma ocorrência oficial após a análise do setor de Manutenção.
-
-### Fluxo:
-
-**🌐 Sugestão pública**
-
-↓
-
-**📥 Recebimento**
-
-↓
-
-**🔎 Triagem**
-
-↓
-
-**❌ Não aprovada**
-
-**OU**
-
-**✅ Aprovada**
-
-↓
-
-**🔧 Ocorrência de manutenção**
-
-↓
-
-**▶️ Atendimento**
-
-↓
-
-**🏁 Finalização**
-
-Essa regra permitirá que os relatórios e indicadores do sistema trabalhem com informações mais confiáveis, evitando que relatos não confirmados sejam contabilizados como problemas reais de manutenção.
-
----
-
-# 💡 16. Visão do Projeto
-
-> **SGA — Sistema de Gestão de Ambientes**
->
-> Uma solução pensada para transformar informações dispersas em **controle, organização e eficiência na gestão dos ambientes institucionais**.
->
-> O sistema também busca aproximar os usuários do setor responsável pela infraestrutura, permitindo que problemas identificados nos ambientes sejam comunicados de forma simples, mesmo sem acesso ao sistema.
->
-> **Comunicar → Analisar → Validar → Atender → Resolver**
-
----
-
-# 📄 Informações do Documento
-
-**Documento:** Escopo inicial — Versão 01
-**Data de referência:** 08/09/2026
-**Projeto:** SGA — Sistema de Gestão de Ambientes
-**Grupo:** TechFlow 📥
+**Equipe TechFlow — Projeto Integrador II & Frameworks Front-End — 2026**

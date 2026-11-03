@@ -1,0 +1,41 @@
+[
+  {
+    "id": 1,
+    "codigo": "ADS-2026-1N",
+    "nome": "Análise e Desenvolvimento de Sistemas - 1º Semestre Noturno",
+    "curso": "Análise e Desenvolvimento de Sistemas",
+    "turno": "Noturno",
+    "carga_horaria": 400,
+    "situacao": "Ativa",
+    "horario_inicio": "19:00:00",
+    "horario_fim": "22:30:00",
+    "periodo_inicio": "2026-02-01",
+    "periodo_fim": "2026-06-30"
+  },
+  {
+    "id": 2,
+    "codigo": "GTI-2026-3N",
+    "nome": "Gestão da Tecnologia da Informação - 3º Semestre Noturno",
+    "curso": "Gestão da TI",
+    "turno": "Noturno",
+    "carga_horaria": 360,
+    "situacao": "Ativa",
+    "horario_inicio": "19:00:00",
+    "horario_fim": "22:30:00",
+    "periodo_inicio": "2026-02-01",
+    "periodo_fim": "2026-06-30"
+  },
+  {
+    "id": 3,
+    "codigo": "RDS-2026-2M",
+    "nome": "Redes de Computadores - 2º Semestre Matutino",
+    "curso": "Redes de Computadores",
+    "turno": "Matutino",
+    "carga_horaria": 380,
+    "situacao": "Ativa",
+    "horario_inicio": "08:00:00",
+    "horario_fim": "11:30:00",
+    "periodo_inicio": "2026-02-01",
+    "periodo_fim": "2026-06-30"
+  }
+]
