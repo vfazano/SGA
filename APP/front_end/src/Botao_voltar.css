@@ -1,6 +1,8 @@
 .shared-back-button {
 	background: var(--back-button-background, #102a43);
-	border: 1px solid var(--back-button-border, #78909d);
+	border: 1px solid var(--back-button-border, rgba(255, 255, 255, .36));
+	border-radius: 9px;
+	box-shadow: 0 8px 20px rgba(16, 42, 67, .18);
 	color: var(--back-button-color, white);
 	cursor: pointer;
 	font: inherit;
@@ -8,12 +10,15 @@
 	position: fixed;
 	right: 24px;
 	top: 20px;
+	transition: background .2s ease, box-shadow .2s ease, transform .2s ease;
 	z-index: 10;
 }
 
 .shared-back-button:hover {
 	background: #176b87;
 	border-color: #176b87;
+	box-shadow: 0 10px 24px rgba(16, 42, 67, .24);
+	transform: translateY(-2px);
 }
 
 @media (max-width: 600px) {

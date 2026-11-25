@@ -79,7 +79,7 @@ Todos os endpoints operam sob o prefixo `/api` e retornam respostas padronizadas
 ## 🛠️ Como Executar o Backend Localmente
 
 ```bash
-cd APP/beck_end
+cd APP/back_end
 
 # 1. Copiar as variáveis de ambiente
 cp .env.example .env

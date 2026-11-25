@@ -33,6 +33,7 @@ function Home() {
 	const [usages, setUsages] = useState([]);
 	const [environments, setEnvironments] = useState([]);
 	const [now, setNow] = useState(new Date());
+	const [searchTerm, setSearchTerm] = useState('');
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState('');
 
@@ -68,6 +69,21 @@ function Home() {
 		}));
 	}, [environments, now, usages]);
 
+	const filteredUsages = useMemo(() => {
+		const normalizedSearch = normalizeText(searchTerm.trim());
+		if (!normalizedSearch) return currentUsages;
+
+		return currentUsages.filter((usage) => normalizeText([
+			usage.environment.codigo,
+			usage.environment.nome,
+			usage.aulaDescricao,
+			usage.aulaId,
+			usage.diaSemana,
+			usage.horario,
+			usage.periodo,
+		].join(' ')).includes(normalizedSearch));
+	}, [currentUsages, searchTerm]);
+
 	const currentTime = now.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
 
 	return (
@@ -91,6 +107,17 @@ function Home() {
 					<p className="intro-text">Aulas em andamento às {currentTime}</p>
 				</div>
 
+				<label className="room-search">
+					<span aria-hidden="true">⌕</span>
+					<input
+						type="search"
+						aria-label="Pesquisar salas"
+						placeholder="Pesquisar por sala, código, turma ou horário"
+						value={searchTerm}
+						onChange={(event) => setSearchTerm(event.target.value)}
+					/>
+				</label>
+
 				<div className="flight-board" role="table" aria-label="Programação de ambientes">
 					<div className="board-heading" role="row">
 						<span>HORÁRIO</span><span>DESTINO / TURMA</span><span>AMBIENTE</span><span>STATUS</span>
@@ -98,7 +125,8 @@ function Home() {
 					{loading && <p className="board-message">Carregando alocacoes...</p>}
 					{error && <p className="board-message board-error" role="alert">{error}</p>}
 					{!loading && !error && currentUsages.length === 0 && <p className="board-message">Nenhum ambiente ocupado neste horário.</p>}
-					{!loading && !error && currentUsages.map((usage) => <div className="flight-row active-row" role="row" key={usage.id}>
+					{!loading && !error && currentUsages.length > 0 && filteredUsages.length === 0 && <p className="board-message" role="status">Nenhuma sala encontrada para essa pesquisa.</p>}
+					{!loading && !error && filteredUsages.map((usage) => <div className="flight-row active-row" role="row" key={usage.id}>
 						<strong>{usage.horario || 'Horário da turma'}</strong><span><b>{usage.aulaDescricao || usage.aulaId}</b><small>{usage.diaSemana || 'Alocação registrada'} · {usage.periodo || 'Período não informado'}</small></span><span className="gate">{usage.environment.codigo} · {usage.environment.nome}</span><span className="status boarding">ALOCADO</span>
 					</div>)}
 				</div>

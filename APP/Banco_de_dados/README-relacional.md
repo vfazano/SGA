@@ -15,6 +15,7 @@ O arquivo `t.sql` e uma planilha TSV exportada, nao um script SQL. A conversao f
 1. Abra o SQL Editor do Supabase.
 2. Execute `schema-relacional.sql`.
 3. Execute `t-relacional.sql`.
+4. Para a tabela de manutenção já existente, execute `migracao-criadoem-timestamptz.sql` para armazenar a data e a hora das solicitações.
 
 O arquivo `t-relacional.sql` foi gerado a partir do TSV e contem 623 linhas validas. Docentes ausentes na planilha sao gravados como `NULL`, sem criar registros ficticios.
 

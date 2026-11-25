@@ -1,0 +1,136 @@
+:root {
+  --sga-ink: #102a43;
+  --sga-blue: #176b87;
+  --sga-yellow: #f1c84b;
+  --sga-paper: #f4f6f2;
+  --sga-muted: #6d7f91;
+  --sga-line: #d4ddd9;
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  background: var(--sga-paper);
+  color: var(--sga-ink);
+  font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+button {
+  transition: background-color .2s ease, border-color .2s ease, box-shadow .2s ease, color .2s ease, transform .2s ease;
+}
+
+main[class] {
+  animation: sga-page-enter .55s cubic-bezier(.2, .75, .25, 1) both;
+}
+
+main[class] > header {
+  isolation: isolate;
+  overflow: hidden;
+  position: relative;
+  background-image:
+    radial-gradient(ellipse at 86% 42%, rgba(241, 200, 75, .14), transparent 25%),
+    linear-gradient(112deg, rgba(23, 107, 135, .2), transparent 58%);
+}
+
+main[class] > header::after {
+  border: 1px solid rgba(255, 255, 255, .09);
+  border-radius: 50%;
+  box-shadow: 0 0 0 24px rgba(255, 255, 255, .025), 0 0 0 48px rgba(255, 255, 255, .02);
+  content: '';
+  height: 260px;
+  pointer-events: none;
+  position: absolute;
+  right: 7%;
+  top: -190px;
+  width: 260px;
+  z-index: -1;
+}
+
+main[class] button:not(:disabled):hover {
+  box-shadow: 0 8px 18px rgba(16, 42, 67, .14);
+}
+
+main[class] button:active:not(:disabled) {
+  transform: scale(.98);
+}
+
+main[class] :is(input, select, textarea):focus-visible {
+  border-color: var(--sga-blue);
+  outline: 3px solid rgba(23, 107, 135, .15);
+  outline-offset: 1px;
+}
+
+.flight-board,
+.allocation-panel,
+.assignment-panel,
+.registration-card,
+.registration-panel,
+.maintenance-panel,
+.report-selector,
+.routing-column,
+.routing-card,
+.environment-summary-card,
+.class-shift-card,
+.environment-table,
+.allocation-table,
+.assignment-report-table,
+.class-table {
+  border-radius: 12px;
+}
+
+.flight-board,
+.registration-card,
+.registration-panel,
+.maintenance-panel,
+.report-selector,
+.routing-column,
+.routing-card,
+.environment-summary-card,
+.class-shift-card {
+  transition: box-shadow .22s ease, transform .22s ease;
+}
+
+.routing-card:hover,
+.environment-summary-card:hover,
+.class-shift-card:hover {
+  box-shadow: 0 14px 28px rgba(16, 42, 67, .12);
+  transform: translateY(-3px);
+}
+
+main[class] table tbody tr {
+  transition: background-color .18s ease;
+}
+
+main[class] table tbody tr:hover {
+  background: rgba(23, 107, 135, .055);
+}
+
+@keyframes sga-page-enter {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

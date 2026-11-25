@@ -112,5 +112,4 @@
 | `nome` | `varchar` |  |
 | `sujestao` | `varchar` |  |
 | `status` | `varchar` |  |
-| `criadoem` | `date` |  Nullable |
-
+| `criadoem` | `timestamptz` |  Data e hora da solicitação; preenchida automaticamente |

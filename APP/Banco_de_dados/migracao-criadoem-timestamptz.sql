@@ -1,0 +1,4 @@
+ALTER TABLE public.sugestoes_manutencao
+  ALTER COLUMN criadoem TYPE TIMESTAMP WITH TIME ZONE
+    USING criadoem::TIMESTAMP AT TIME ZONE 'America/Sao_Paulo',
+  ALTER COLUMN criadoem SET DEFAULT CURRENT_TIMESTAMP;
